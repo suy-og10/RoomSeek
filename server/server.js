@@ -38,7 +38,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/rooms', roomRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Room Finder API is running...');
+    res.send('RoomSeek API is running...');
 });
 
 // Start Server

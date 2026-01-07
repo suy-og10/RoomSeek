@@ -19,7 +19,7 @@ const Navbar = () => {
                     <div className="flex items-center">
                         <Link to="/" className="flex items-center text-xl font-bold text-blue-600">
                             <Home className="w-6 h-6 mr-2" />
-                            Room Finder
+                            RoomSeek
                         </Link>
                     </div>
                     <div className="flex items-center space-x-4">
