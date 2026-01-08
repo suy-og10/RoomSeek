@@ -66,7 +66,7 @@ const createRoom = async (req, res) => {
 
     let images = [];
     if (req.files) {
-        images = req.files.map((file) => `/uploads/${file.filename}`);
+        images = req.files.map((file) => file.path);
     }
 
     const room = new Room({

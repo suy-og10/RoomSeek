@@ -5,7 +5,7 @@ const RoomCard = ({ room }) => {
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <img
-                src={room.images && room.images.length > 0 ? `http://localhost:5000${room.images[0]}` : 'https://via.placeholder.com/400x300?text=No+Image'}
+                src={room.images && room.images.length > 0 ? room.images[0] : 'https://via.placeholder.com/400x300?text=No+Image'}
                 alt={room.title}
                 className="w-full h-48 object-cover"
             />

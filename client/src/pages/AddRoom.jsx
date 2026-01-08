@@ -45,7 +45,7 @@ const AddRoom = () => {
                     Authorization: `Bearer ${user.token}`,
                 },
             };
-            await axios.post('http://localhost:5000/api/rooms', data, config);
+            await axios.post(`${import.meta.env.VITE_API_URL}/api/rooms`, data, config);
             navigate('/dashboard');
         } catch (error) {
             console.error(error);

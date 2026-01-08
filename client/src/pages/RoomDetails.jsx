@@ -11,7 +11,7 @@ const RoomDetails = () => {
     useEffect(() => {
         const fetchRoom = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:5000/api/rooms/${id}`);
+                const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/rooms/${id}`);
                 setRoom(data);
             } catch (error) {
                 console.error(error);
@@ -31,7 +31,7 @@ const RoomDetails = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     <div className="h-96 md:h-auto">
                         <img
-                            src={room.images && room.images.length > 0 ? `http://localhost:5000${room.images[0]}` : 'https://via.placeholder.com/800x600?text=No+Image'}
+                            src={room.images && room.images.length > 0 ? room.images[0] : 'https://via.placeholder.com/800x600?text=No+Image'}
                             alt={room.title}
                             className="w-full h-full object-cover"
                         />

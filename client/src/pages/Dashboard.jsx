@@ -16,7 +16,7 @@ const Dashboard = () => {
                         Authorization: `Bearer ${user.token}`,
                     },
                 };
-                const { data } = await axios.get('http://localhost:5000/api/rooms/myrooms', config);
+                const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/rooms/myrooms`, config);
                 setRooms(data);
             } catch (error) {
                 console.error(error);
@@ -35,7 +35,7 @@ const Dashboard = () => {
                         Authorization: `Bearer ${user.token}`,
                     },
                 };
-                await axios.delete(`http://localhost:5000/api/rooms/${id}`, config);
+                await axios.delete(`${import.meta.env.VITE_API_URL}/api/rooms/${id}`, config);
                 setRooms(rooms.filter((room) => room._id !== id));
             } catch (error) {
                 console.error(error);
@@ -66,7 +66,7 @@ const Dashboard = () => {
                                     <div className="flex-shrink-0 h-10 w-10">
                                         <img
                                             className="h-10 w-10 rounded-full object-cover"
-                                            src={room.images && room.images.length > 0 ? `http://localhost:5000${room.images[0]}` : 'https://via.placeholder.com/100'}
+                                            src={room.images && room.images.length > 0 ? room.images[0] : 'https://via.placeholder.com/100'}
                                             alt=""
                                         />
                                     </div>

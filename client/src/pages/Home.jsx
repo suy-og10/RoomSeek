@@ -22,7 +22,7 @@ const Home = () => {
             if (filters.type) params.append('type', filters.type);
             if (filters.tenant) params.append('tenant', filters.tenant);
 
-            const { data } = await axios.get(`http://localhost:5000/api/rooms?${params.toString()}`);
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/rooms?${params.toString()}`);
             setRooms(data);
         } catch (error) {
             console.error('Error fetching rooms:', error);
